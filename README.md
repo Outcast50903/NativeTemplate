@@ -1,4 +1,4 @@
-# Project Name
+# Native Template
 
 This project is an React Native template
 
