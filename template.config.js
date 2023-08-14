@@ -1,4 +1,4 @@
 module.exports = {
-  placeholderName: 'financeApp',
+  placeholderName: 'NativeTemplate',
   templateDir: './template',
 }

@@ -1,8 +1,8 @@
 {
-  "name": "react-native-new-template",
-  "version": "1.0.0",
+  "name": "native-template",
+  "version": "1.0.1",
   "description": "React Native Template",
-  "repository": "https://github.com/Outcast50903/reactronauts",
+  "repository": "https://github.com/Outcast50903/NativeTemplate.git",
   "author": "Outcast",
   "license": "MIT",
   "dependencies": {
