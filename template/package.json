@@ -17,6 +17,7 @@
     "build:e2e": "npx detox build --configuration ios.sim.debug",
     "test:e2e": "npx detox test --configuration ios.sim.debug",
     "test:e2e:watch": "yarn test:e2e --watch",
+    "prepare": "husky install",
     "test:watch": "yarn test --watch"
   },
   "dependencies": {
