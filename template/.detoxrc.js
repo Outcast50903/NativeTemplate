@@ -1,4 +1,4 @@
-const { name } = require('./package.json');
+const { name } = require('./app.json');
 
 /** @type {Detox.DetoxConfig} */
 module.exports = {
