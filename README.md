@@ -8,7 +8,7 @@ Run this command line to install the project:
 
 ```bash
 
-sudo npx react-native init WenApp --template 
+sudo npx react-native init <App-Name> --template https://github.com/Outcast50903/NativeTemplate.git
 
 ```
 ## Getting Started
@@ -29,7 +29,7 @@ Add environment variables:
 
 ```env
 
-API_URL=https://api.sbif.cl/api-sbifv3/recursos_api/
+API_URL=
 
 API_KEY=
 
