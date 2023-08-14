@@ -8,7 +8,7 @@ Run this command line to install the project:
 
 ```bash
 
-sudo npx react-native init <App-Name> --template https://github.com/Outcast50903/NativeTemplate.git
+npx react-native init <App-Name> --template https://github.com/Outcast50903/NativeTemplate.git
 
 ```
 ## Getting Started
