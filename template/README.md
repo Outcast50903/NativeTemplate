@@ -1,5 +1,6 @@
+# Native Template
 
-This is a Finance app, where you can see the most important economic indicators for Chile
+This project is an React Native template
 
 # Getting Started
 
@@ -19,7 +20,7 @@ Add environment variables:
 
 ```env
 
-API_URL=https://api.sbif.cl/api-sbifv3/recursos_api/
+API_URL=
 
 API_KEY=
 

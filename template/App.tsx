@@ -15,6 +15,9 @@ import {AppStateStatus, Platform} from 'react-native';
 import {useOnlineManager, useStateApp} from 'hooks';
 import {AppNavigation} from 'navigation';
 import { DrawerContentComponentProps } from '@react-navigation/drawer';
+import { TamaguiProvider } from 'tamagui';
+
+import config from './tamagui.config';
 
 const client = new QueryClient();
 
@@ -27,7 +30,9 @@ const App = ({ state, navigation, descriptors }: DrawerContentComponentProps) =>
 
   return (
     <QueryClientProvider client={client}>
-      <AppNavigation state={state} navigation={navigation} descriptors={descriptors}  />
+      <TamaguiProvider config={config}>
+        <AppNavigation state={state} navigation={navigation} descriptors={descriptors}  />
+      </TamaguiProvider>
     </QueryClientProvider>
   );
 };

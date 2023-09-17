@@ -19,6 +19,7 @@
       "utils": ["./src/utils"],
       "utils/*": ["./src/utils/*"],
     },
+    "types": ["jest", "@types/jest"],
     "typeRoots": ["./src/types"]
   },
   "exclude": [
@@ -27,4 +28,7 @@
     "metro.config.js",
     "jest.config.js"
   ],
+  "devDependencies": {
+    "@types/jest": "^27.0.1"
+  }
 }
