@@ -1,6 +1,7 @@
 import React from 'react';
+import { Text } from 'tamagui';
+import { FlatList } from 'react-native';
 import {Card, Container} from 'components';
-import {FlatList, Text} from 'react-native';
 import {Items} from './components';
 import data from './data';
 

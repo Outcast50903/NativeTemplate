@@ -4,9 +4,9 @@ import { StackNavigationProp } from '@react-navigation/stack';
 import useQueryFact from 'api/hooks/Fact';
 import { Button, Card, Container } from 'components';
 import { BottomTabStackParamList } from 'navigation';
-import {Text, View} from 'react-native';
 import { useAtomValue } from 'jotai';
 import { factSelectedAtom } from 'atoms';
+import { Text, View } from 'tamagui';
 
 const HomeScreen = () => {
   const navigation = useNavigation<StackNavigationProp<BottomTabStackParamList>>();
@@ -20,7 +20,7 @@ const HomeScreen = () => {
           React-Native Template
         </Text>
         <Card>
-          <Text className="text-lg">
+          <Text color='black' className="text-lg">
             This is a template for React-Native projects using TypeScript,
             TailwindCSS, and React-Navigation.
           </Text>
