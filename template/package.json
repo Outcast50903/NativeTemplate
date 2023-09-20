@@ -1,7 +1,7 @@
 {
   "name": "native-template",
   "version": "1.0.1",
-  "description": "App para ver indicadores financieros de Chile",
+  "description": "Template for React Native projects",
   "author": "Diego García (Diego Outcast)",
   "private": true,
   "scripts": {
