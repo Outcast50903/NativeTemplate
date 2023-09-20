@@ -1,6 +1,6 @@
 {
   "name": "native-template",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "description": "Template for React Native projects",
   "author": "Diego García (Diego Outcast)",
   "private": true,

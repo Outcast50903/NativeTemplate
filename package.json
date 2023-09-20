@@ -3,7 +3,7 @@
   "version": "1.0.1",
   "description": "React Native Template",
   "repository": "https://github.com/Outcast50903/NativeTemplate.git",
-  "author": "Outcast",
+  "author": "Diego García (Diego Outcast)",
   "license": "MIT",
   "dependencies": {
     "@react-native-async-storage/async-storage": "^1.19.1",
