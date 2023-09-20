@@ -1,6 +1,6 @@
 {
   "name": "native-template",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "App para ver indicadores financieros de Chile",
   "author": "Diego García (Diego Outcast)",
   "private": true,
@@ -9,7 +9,7 @@
     "pods": "cd ios && pod install && cd ..",
     "android": "react-native run-android",
     "ios": "react-native run-ios",
-    "reset": "find . -type dir -name node_modules -prune -print -exec rm -rf '{}' +",
+    "reset": "find . -type dir -name node_modules -prune -print -exec rm -rf '{}' + && cd ios && rm -rf Pods && cd .",
     "lint": "eslint .",
     "lint:fix": "yarn lint --fix",
     "lint:tsc": "tsc --noEmit",
