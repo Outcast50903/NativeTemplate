@@ -16,7 +16,7 @@ const HomeScreen = () => {
   return (
     <Container>
       <View className="text-justify flex-1">
-        <Text className="text-2xl text-center mb-2 dark:text-white">
+        <Text color='black' className="text-2xl text-center mb-2 dark:text-white">
           React-Native Template
         </Text>
         <Card>
@@ -24,7 +24,7 @@ const HomeScreen = () => {
             This is a template for React-Native projects using TypeScript,
             TailwindCSS, and React-Navigation.
           </Text>
-          <Text className="mt-3 text-lg">
+          <Text color='black' className="mt-3 text-lg">
             It also includes TanStack Query for handle API calls. See more
             details of the libraries here
           </Text>
