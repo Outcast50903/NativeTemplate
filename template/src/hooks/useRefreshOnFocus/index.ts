@@ -1,5 +1,5 @@
-import {useFocusEffect} from '@react-navigation/native';
 import {useCallback, useRef} from 'react';
+import {useFocusEffect} from '@react-navigation/native';
 
 const useRefreshOnFocus = <T>(refetch: () => Promise<T>) => {
   const firstTimeRef = useRef(true);
