@@ -14,7 +14,7 @@ module.exports = {
     'prettier',
   ],
   parser: '@typescript-eslint/parser',
-  plugins: ['@typescript-eslint', 'react-native'],
+  plugins: ['@typescript-eslint', 'react-native', 'simple-import-sort'],
   rules: {
     'max-len': [2, { code: 120, ignoreUrls: true }],
     'max-lines': ['warn', { max: 350, skipBlankLines: true, skipComments: true }],
@@ -22,6 +22,19 @@ module.exports = {
     'max-lines-per-function': 'off',
     '@typescript-eslint/no-use-before-define': ['warn'],
     '@typescript-eslint/explicit-module-boundary-types': 'off',
+    "simple-import-sort/imports": [
+      "error",
+      {
+        "groups": [
+          ["^react", "^@?\\w"],
+          ["^(@|components)(/.*|$)"],
+          ["^\\u0000"],
+          ["^\\.\\.(?!/?$)", "^\\.\\./?$"],
+          ["^\\./(?=.*/)(?!/?$)", "^\\.(?!/?$)", "^\\./?$"],
+          ["^.+\\.?(css)$"]
+        ]
+      }
+    ]
   },
   settings: {
     'import/extensions': ['.js', '.jsx', '.ts', '.tsx'],
