@@ -4,6 +4,11 @@ export type HomeStackParamList = {
   HOME: undefined;
 };
 
+export type WelcomeStackParamList = {
+  LOGIN_SCREEN_ROUTE: undefined;
+  WELCOME_SCREEN_ROUTE: undefined;
+};
+
 export type BottomTabStackParamList = {
   HOME_ROUTES: NavigatorScreenParams<HomeStackParamList>;
   DETAILS: undefined;
