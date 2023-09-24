@@ -1,8 +1,8 @@
 import React from 'react';
-import {render, fireEvent} from '@testing-library/react-native';
-import Button from '../index';
+import {describe, expect, it, jest} from '@jest/globals';
+import {fireEvent,render} from '@testing-library/react-native';
 
-import {it, describe, expect, jest} from '@jest/globals';
+import Button from '../index';
 
 describe('Button', () => {
   it('renders correctly with default props', () => {

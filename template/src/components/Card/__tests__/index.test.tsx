@@ -1,9 +1,9 @@
 import React from 'react';
-import {render} from '@testing-library/react-native';
 import { Text } from 'react-native';
-import Card from '..';
+import {describe, expect,it} from '@jest/globals';
+import {render} from '@testing-library/react-native';
 
-import {it, describe, expect} from '@jest/globals';
+import Card from '..';
 
 describe('Card', () => {
   it('renders its children', () => {

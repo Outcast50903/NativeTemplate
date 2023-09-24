@@ -1,5 +1,6 @@
 import React from 'react';
 import {SvgXml} from 'react-native-svg';
+
 import {SvgProps} from './types';
 
 const HomeIcon: React.FC<SvgProps> = ({
