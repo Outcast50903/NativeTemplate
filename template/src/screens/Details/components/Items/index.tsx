@@ -1,5 +1,5 @@
-import {View, Text} from 'react-native';
 import React, {FC} from 'react';
+import { Text, View } from 'tamagui';
 
 interface ItemProps {
   item: {key: string};
@@ -8,7 +8,7 @@ interface ItemProps {
 const Item: FC<ItemProps> = ({item: {key}}) => {
   return (
     <View testID='details-item-component-id' className="mb-2">
-      <Text className="text-lg dark:text-black">{`\u2022 ${key}`}</Text>
+      <Text color='black' className="text-lg dark:text-black">{`\u2022 ${key}`}</Text>
     </View>
   );
 };
