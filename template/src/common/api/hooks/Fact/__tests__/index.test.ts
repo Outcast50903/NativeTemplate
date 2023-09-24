@@ -1,9 +1,9 @@
-import { useQueryClient, useQuery } from '@tanstack/react-query';
-import useQueryFact from '../index';
-
-import { it, describe, expect, jest, beforeEach, afterEach } from '@jest/globals';
+import { afterEach,beforeEach, describe, expect, it, jest } from '@jest/globals';
+import { useQuery,useQueryClient } from '@tanstack/react-query';
 import { renderHook } from '@testing-library/react-native';
 import { waitFor } from '@testing-library/react-native';
+
+import useQueryFact from '../index';
 
 jest.mock('@tanstack/react-query');
 

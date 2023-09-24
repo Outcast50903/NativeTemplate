@@ -1,6 +1,5 @@
 import { useQuery, useQueryClient } from "@tanstack/react-query";
-import { FactResponse } from "api/types";
-import { handleFactSelectedAtom } from "atoms";
+import { FactResponse, handleFactSelectedAtom } from "common";
 import { useSetAtom } from "jotai";
 import AxiosHttpClient from "utils/api";
 
