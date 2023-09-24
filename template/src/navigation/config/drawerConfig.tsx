@@ -1,17 +1,20 @@
 import React from 'react';
-import {View, useColorScheme} from 'react-native';
 import {TouchableOpacity} from 'react-native-gesture-handler';
-import {DrawerNavigationOptions} from '@react-navigation/drawer';
+import {DrawerNavigationOptions, DrawerNavigationProp} from '@react-navigation/drawer';
 import {ParamListBase, RouteProp} from '@react-navigation/native';
+import { isDarkModeAtom } from 'common';
+import { useAtomValue } from 'jotai';
+import { View } from 'tamagui';
+
 import {DrawerIcon} from 'components';
 
 type Props = {
   route: RouteProp<ParamListBase, string>;
-  navigation: any;
+  navigation: DrawerNavigationProp<ParamListBase>;
 };
 
-const DrawerTheme = ({navigation}: Props): DrawerNavigationOptions => {
-  const isDarkMode = useColorScheme() === 'dark';
+const DrawerConfig = ({navigation}: Props): DrawerNavigationOptions => {
+  const isDarkMode = useAtomValue(isDarkModeAtom);
 
   const themeColor = isDarkMode ? 'rgb(23 23 23)' : 'rgb(245 245 245)';
   const textColor = isDarkMode ? 'rgb(245 245 245)' : 'rgb(23 23 23)';
@@ -36,4 +39,4 @@ const DrawerTheme = ({navigation}: Props): DrawerNavigationOptions => {
   };
 };
 
-export default DrawerTheme;
+export default DrawerConfig;

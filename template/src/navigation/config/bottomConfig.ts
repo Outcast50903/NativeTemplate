@@ -1,8 +1,9 @@
 import {BottomTabNavigationOptions} from '@react-navigation/bottom-tabs';
-import {useColorScheme} from 'react-native';
+import { isDarkModeAtom } from 'common';
+import { useAtomValue } from 'jotai';
 
-const BottomTheme = (): BottomTabNavigationOptions => {
-  const isDarkMode = useColorScheme() === 'dark';
+const BottomConfig = (): BottomTabNavigationOptions => {
+  const isDarkMode = useAtomValue(isDarkModeAtom);;
 
   const themeColor = isDarkMode ? 'rgb(23 23 23)' : 'rgb(245 245 245)';
 
@@ -15,4 +16,4 @@ const BottomTheme = (): BottomTabNavigationOptions => {
   };
 };
 
-export default BottomTheme;
+export default BottomConfig;
