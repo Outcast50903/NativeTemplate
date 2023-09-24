@@ -1,8 +1,7 @@
+import { describe, expect,it} from '@jest/globals';
 import { act, renderHook } from '@testing-library/react-native';
+import { factSelectedAtom } from 'common/atoms/factSelected';
 import { useAtom } from 'jotai';
-
-import { it, describe, expect} from '@jest/globals';
-import { factSelectedAtom } from 'atoms/factSelected';
 
 describe('factSelectedAtom', () => {
   it('should initialize with null', () => {
