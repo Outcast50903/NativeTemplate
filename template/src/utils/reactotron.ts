@@ -11,7 +11,7 @@ import {Tron} from '../../global';
 
 // Reactotron.setAsyncStorageHandler?.(AsyncStorage)
 //   .configure({
-//     host: '192.168.0.6',
+//     host: '',
 //     onDisconnect: () => {
 //       queryClientManager.unsubscribe();
 //     },

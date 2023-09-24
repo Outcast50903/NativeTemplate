@@ -1,4 +1,5 @@
 import axios, {AxiosInstance} from 'axios';
+
 import HttpClient from './class';
 import {HeaderType} from './types';
 
@@ -37,7 +38,7 @@ export default class AxiosHttpClient extends HttpClient {
 
   async post<TResponse, UBody>(
     url: string,
-    body: Record<string, UBody>,
+    body: UBody,
   ): Promise<TResponse> {
     try {
       const {data} = await this.api.post<TResponse>(url, body);
@@ -49,7 +50,7 @@ export default class AxiosHttpClient extends HttpClient {
 
   async put<TResponse, UBody>(
     url: string,
-    body: Record<string, UBody>,
+    body: UBody,
   ): Promise<TResponse> {
     try {
       const {data} = await this.api.put<TResponse>(url, body);
@@ -61,7 +62,7 @@ export default class AxiosHttpClient extends HttpClient {
 
   async patch<TResponse, UBody>(
     url: string,
-    body: Record<string, UBody>,
+    body: UBody,
   ): Promise<TResponse> {
     try {
       const {data} = await this.api.patch<TResponse>(url, body);
@@ -71,12 +72,11 @@ export default class AxiosHttpClient extends HttpClient {
     }
   }
 
-  async delete<TResponse, UBody = null>(
+  async delete<TResponse>(
     url: string,
-    body?: Record<string, UBody>,
   ): Promise<TResponse> {
     try {
-      const {data} = await this.api.delete<TResponse>(url, body);
+      const {data} = await this.api.delete<TResponse>(url);
       return data;
     } catch (error) {
       return null as TResponse;
