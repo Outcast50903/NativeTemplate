@@ -6,6 +6,6 @@ export * from './DrawerNavigator/components';
 export * from './DrawerNavigator/types';
 export {default as DrawerNavigator} from './DrawerNavigator';
 export * from './stacks';
-export * from './themes';
+export * from './config';
 export * from './types';
 export * from './stacks/components';

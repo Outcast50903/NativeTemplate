@@ -1,4 +1,5 @@
 import {FireIcon, HomeIcon} from 'components';
+
 import {DrawerItemType} from './types';
 
 export const DrawerItemsArr: DrawerItemType[] = [

@@ -1,7 +1,9 @@
 import {IndicatorStack} from 'navigation/stacks';
-import {TabListType} from './types';
-import {FireIcon, HomeIcon} from 'components';
 import DetailsScreen from 'screens/Details';
+
+import {FireIcon, HomeIcon} from 'components';
+
+import {TabListType} from './types';
 
 export const BottomItemsArr: TabListType = [
   {
