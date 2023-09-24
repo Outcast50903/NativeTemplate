@@ -1,9 +1,11 @@
 import React from 'react';
-import {render} from '@testing-library/react-native';
 import { Text, View } from 'react-native';
-import Container from '../index';
-import {it, describe, expect} from '@jest/globals';
+import {describe, expect,it} from '@jest/globals';
+import {render} from '@testing-library/react-native';
+
 import '@testing-library/jest-native/extend-expect';
+
+import Container from '../index';
 
 describe('Container', () => {
   it('renders children', () => {
