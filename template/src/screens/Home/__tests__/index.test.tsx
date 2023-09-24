@@ -1,11 +1,11 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React from 'react';
-import {render} from '@testing-library/react-native';
+import {describe, expect,it} from '@jest/globals';
 import {NavigationContainer} from '@react-navigation/native';
 import {QueryClient, QueryClientProvider} from '@tanstack/react-query';
-import HomeScreen from '..';
+import {render} from '@testing-library/react-native';
 
-import {it, describe, expect} from '@jest/globals';
+import HomeScreen from '..';
 
 describe('HomeScreen', () => {
   const queryClient = new QueryClient();
