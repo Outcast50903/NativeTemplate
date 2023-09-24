@@ -1,7 +1,8 @@
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {bottomTheme} from 'navigation/themes';
-import {BottomTabStackParamList} from 'navigation/types';
 import React from 'react';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import { bottomConfig } from 'navigation/config';
+import {BottomTabStackParamList} from 'navigation/types';
+
 import {BottomItemsArr} from './bottomItems';
 import {BottomTabItem} from './components';
 
@@ -9,7 +10,7 @@ const {Navigator, Screen} = createBottomTabNavigator<BottomTabStackParamList>();
 
 const BottomNavigation = () => {
   return (
-    <Navigator initialRouteName="HOME_ROUTES" screenOptions={bottomTheme}>
+    <Navigator initialRouteName="HOME_ROUTES" screenOptions={bottomConfig}>
       {BottomItemsArr.flatMap(({key, component, stack, label, icon}) => (
         <Screen
           key={key}

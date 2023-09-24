@@ -1,6 +1,9 @@
-import {SvgProps} from 'components';
 import React, {FC, FunctionComponent} from 'react';
-import {View, Text, Pressable, useColorScheme} from 'react-native';
+import {Pressable, Text,View} from 'react-native';
+import { isDarkModeAtom } from 'common';
+import { useAtomValue } from 'jotai';
+
+import {SvgProps} from 'components';
 
 interface DrawerItemProps {
   label: string;
@@ -9,7 +12,7 @@ interface DrawerItemProps {
 }
 
 const DrawerItem: FC<DrawerItemProps> = ({icon: Icon, label, onPress}) => {
-  const isDarkMode = useColorScheme() === 'dark';
+  const isDarkMode = useAtomValue(isDarkModeAtom)
 
   const CurrentIcon = () => (
     <Icon
