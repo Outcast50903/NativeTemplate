@@ -5,17 +5,19 @@ import { useAtomValue } from 'jotai';
 import {stackConfig} from 'navigation/config';
 import {HomeStackParamList} from 'navigation/types';
 import HomeScreen from 'screens/Home';
+import LoginScreen from 'screens/Login';
 
 const {Navigator, Screen} = createStackNavigator<HomeStackParamList>();
 
-const IndicatorStack = () => {
+const HomeStack = () => {
   const isDarkMode = useAtomValue(isDarkModeAtom);
 
   return (
-    <Navigator initialRouteName="HOME" screenOptions={stackConfig(isDarkMode)}>
-      <Screen name="HOME" component={HomeScreen} />
+    <Navigator initialRouteName="HOME_SCREEN_ROUTE" screenOptions={stackConfig(isDarkMode)}>
+      <Screen name="HOME_SCREEN_ROUTE" component={HomeScreen} />
+      <Screen name="LOGIN_SCREEN_ROUTE" component={LoginScreen} />
     </Navigator>
   );
 };
 
-export default IndicatorStack;
+export default HomeStack;

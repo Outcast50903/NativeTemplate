@@ -1,17 +1,13 @@
 import {NavigatorScreenParams} from '@react-navigation/native';
 
 export type HomeStackParamList = {
-  HOME: undefined;
-};
-
-export type WelcomeStackParamList = {
+  HOME_SCREEN_ROUTE: undefined;
   LOGIN_SCREEN_ROUTE: undefined;
-  WELCOME_SCREEN_ROUTE: undefined;
 };
 
 export type BottomTabStackParamList = {
   HOME_ROUTES: NavigatorScreenParams<HomeStackParamList>;
-  DETAILS: undefined;
+  DETAILS_SCREEN_ROUTE: undefined;
 };
 
 export type DrawerStackParamList = {

@@ -1,4 +1,4 @@
-import {IndicatorStack} from 'navigation/stacks';
+import { HomeStack } from 'navigation/stacks';
 import DetailsScreen from 'screens/Details';
 
 import {FireIcon, HomeIcon} from 'components';
@@ -10,13 +10,13 @@ export const BottomItemsArr: TabListType = [
     key: 1,
     label: 'Inicio',
     stack: 'HOME_ROUTES',
-    component: IndicatorStack,
+    component: HomeStack,
     icon: HomeIcon,
   },
   {
     key: 2,
     label: 'Detalles',
-    stack: 'DETAILS',
+    stack: 'DETAILS_SCREEN_ROUTE',
     component: DetailsScreen,
     icon: FireIcon,
   },
