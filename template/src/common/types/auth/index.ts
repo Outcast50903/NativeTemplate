@@ -10,7 +10,11 @@ type LoginResponse = {
   refreshToken: string;
 }
 
-export type AuthLoginResponse = GenericResponse<{ login: LoginResponse }>
+export interface AuthLoginResponse extends GenericResponse<{ login: LoginResponse }> {
+  errors: { message: string }[]
+}
+
+// export type AuthLoginResponse = GenericResponse<{ login: LoginResponse }>
 
 export type AuthDecoded = {
   id:    string;
