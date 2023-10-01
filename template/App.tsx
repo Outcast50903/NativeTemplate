@@ -18,6 +18,7 @@ import {useOnlineManager, useStateApp} from 'hooks';
 import { useSetAtom } from 'jotai';
 import {AppNavigation} from 'navigation';
 import { TamaguiProvider } from 'tamagui';
+import { Airship } from 'utils/toast';
 
 import config from './tamagui.config';
 
@@ -36,7 +37,9 @@ const App = ({ state, navigation, descriptors }: DrawerContentComponentProps) =>
   return (
     <QueryClientProvider client={client}>
       <TamaguiProvider config={config}>
-        <AppNavigation state={state} navigation={navigation} descriptors={descriptors}  />
+        <Airship>
+          <AppNavigation state={state} navigation={navigation} descriptors={descriptors}  />
+        </Airship>
       </TamaguiProvider>
     </QueryClientProvider>
   );
