@@ -1,11 +1,4 @@
-import { API_URL } from "@env";
-import AxiosHttpClient from "utils/api";
-
-const API = new AxiosHttpClient(API_URL ?? '', { 
-  "Content-Type": "application/json", 
-  "x-apollo-operation-name": true, 
-  "apollo-require-preflight": true 
-});
+import { API } from "common";
 
 export async function fetcher<TData, TVariables>(
   query: string, 
