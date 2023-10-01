@@ -32,6 +32,7 @@ export type AuthState = {
 
 export type AuthAction = {
   dispatchLogout: () => void
+  // eslint-disable-next-line no-unused-vars
   dispatchLogin: (token: string, refreshToken: string) => void
 }
 
