@@ -1,8 +1,8 @@
 import React from 'react';
-import { Controller,useForm } from 'react-hook-form';
+import { Controller, useForm } from 'react-hook-form';
 import { Keyboard } from 'react-native';
 import { useMutationLogin } from 'common';
-import { Button,Input, Text, View } from 'tamagui';
+import { Button, Input, Text, View } from 'tamagui';
 import * as z from 'zod';
 
 const schema = z.object({
@@ -13,7 +13,7 @@ const schema = z.object({
 type FormData = z.infer<typeof schema>;
 
 const LoginScreen = () => {
-  const {loginMutation: { mutate, isLoading }} = useMutationLogin();
+  const {loginMutation: { mutateAsync, isLoading }} = useMutationLogin();
   
   const { control, handleSubmit, formState } = useForm<FormData>({
     mode: 'onChange',
@@ -30,7 +30,7 @@ const LoginScreen = () => {
 
   const onSubmit = ({ email, password }: FormData) => {
     Keyboard.dismiss()
-    mutate({ email: email.toLowerCase(), password })
+    mutateAsync({ email: email.toLowerCase(), password })
   };
 
   return (
@@ -71,9 +71,14 @@ const LoginScreen = () => {
       {formState.errors.password && (
         <Text color='red'>{formState.errors.password}</Text>
       )}
-      <Button onPress={handleSubmit(onSubmit)} disabled={!formState.isValid || isLoading}>Login</Button>
+      <Button 
+        onPress={handleSubmit(onSubmit)} 
+        disabled={!formState.isValid} 
+        backgroundColor={ formState.isValid ? 'purple' : 'gray'}>
+          Login
+      </Button>
     </View>
   );
-};
+}
 
 export default LoginScreen;
