@@ -12,6 +12,7 @@ export default class AxiosHttpClient extends HttpClient {
       baseURL: baseUrl,
       headers: {
         'Content-Type': 'application/json',
+        ...headers,
       },
     });
 
