@@ -1,18 +1,19 @@
 import { useMutation } from "@tanstack/react-query"
-import { AuthLoginRequest, AuthLoginResponse, fetcher, useActionsAuth } from "common";
-
-import { loginQueryDocument } from "./request";
+import { API, AuthLoginRequest, AuthLoginResponse, useActionsAuth } from "common";
+import { showToast } from "utils/toast";
 
 export const useMutationLogin = () => {
   const {dispatchLogin} = useActionsAuth()
 
   const loginMutation = useMutation(
-    (payload: AuthLoginRequest) => 
-      fetcher<AuthLoginResponse, AuthLoginRequest>(loginQueryDocument, payload),
+    (payload: AuthLoginRequest) => API.post<AuthLoginResponse, AuthLoginRequest>('/login', payload),
     {
-      onSuccess: async (data: AuthLoginResponse) => { 
+      onSuccess: async (data: AuthLoginResponse) => {        
         return dispatchLogin(data.data.login.accessToken, data.data.login.refreshToken)
       },
+      onError: (error: string) => {
+        showToast({ message: error, type: 'error' })
+      }
     }
   );
 
