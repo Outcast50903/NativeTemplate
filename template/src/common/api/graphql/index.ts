@@ -10,17 +10,11 @@ const API = new AxiosHttpClient(API_URL ?? '', {
 export async function fetcher<TData, TVariables>(
   query: string, 
   variables?: TVariables
-): Promise<TData> {
-  try {
-    const response = await API.post<TData, { query: string, variables: TVariables | undefined }>('', { 
-      query, 
-      variables 
-    });
-    
-    if(response && response.errors) throw new Error(response.errors[0].message)
-    
-    return response;
-  } catch (error) {
-    throw new Error(error as string);
-  }
+): Promise<TData> {  
+  const response = await API.post<TData, { query: string, variables: TVariables | undefined }>('', { 
+    query, 
+    variables 
+  });
+
+  return response;
 }
