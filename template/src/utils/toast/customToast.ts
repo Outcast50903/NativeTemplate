@@ -46,27 +46,22 @@ export function CustomToast(props: AirshipToastProps) {
       if (timeout != null) clearTimeout(timeout as number);
     };
   });
-
-  const bodyStyle = {
-    alignItems: 'center', 
-    alignSelf: 'flex-start',
-    backgroundColor,
-    borderRadius, 
-    flexDirection: 'row', 
-    justifyContent: 'flex-start', 
-    maxWidth, 
-    opacity 
-  };
   
-  const textStyle = {
-    color: textColor,
-    flexShrink: 1,
-    fontSize: textSize,
-    textAlign: 'center'
-  };
   return (
-    createElement(Animated.View, { style: bodyStyle },
-      message != null ? createElement(Text, { style: textStyle }, message) : null,
-      children)
+    createElement(Animated.View, { style: {
+        alignItems: 'center', 
+        alignSelf: 'flex-start',
+        backgroundColor,
+        borderRadius, 
+        flexDirection: 'row', 
+        justifyContent: 'flex-start', 
+        maxWidth, 
+        opacity 
+      }}, message != null ? createElement(Text, { style: {
+        color: textColor,
+        flexShrink: 1,
+        fontSize: textSize,
+        textAlign: 'center'
+      }}, message) : null, children)
   );
 }
