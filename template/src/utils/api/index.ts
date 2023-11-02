@@ -25,7 +25,6 @@ export default class AxiosHttpClient extends HttpClient {
 
       return config;
     });
-    // this.api.defaults.headers.common['Authenticate'] = `${headers?.Authenticate}`
   }
 
   async get<TResponse>(url: string): Promise<TResponse> {
