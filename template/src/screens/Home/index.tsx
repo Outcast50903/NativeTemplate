@@ -15,7 +15,7 @@ const HomeScreen = () => {
     <Container>
       <YStack alignItems='center' justifyContent='center' space={8}>
         <H3 color='black' className="dark:text-white"> React-Native Template</H3>
-        <Card space={8} animation="bouncy" backgroundColor={'coral'} padding={16}>
+        <Card space={8} animation="bouncy" backgroundColor={'red'} padding={16}>
           <Text color='black' className="text-lg dark:text-white">
             This is a template for React-Native projects using TypeScript,
             TailwindCSS, Tamagui and React-Navigation.
