@@ -36,4 +36,7 @@ module.exports = {
     ],
     'react-native-reanimated/plugin',
   ],
+  ignore: [
+    "**/*.test.js"
+  ]
 };
