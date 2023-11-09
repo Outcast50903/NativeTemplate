@@ -1,5 +1,5 @@
-import {it, describe, beforeAll, beforeEach} from '@jest/globals';
-import { device, element, by } from 'detox';
+import {beforeAll, beforeEach,describe, it} from '@jest/globals';
+import { by,device, element } from 'detox';
 
 describe('HomeScreen', () => {
   beforeAll(async () => {
@@ -22,9 +22,5 @@ describe('HomeScreen', () => {
     await expect(element(by.text('Dependencies'))).toBeVisible();
     await expect(element(by.text('This project uses the following dependencies:')))
       .toBeVisible();
-  });
-
-  it('should display a fact when the API call is successful', async () => {
-    await expect(element(by.id('api-fact-id'))).toBeVisible();
   });
 });

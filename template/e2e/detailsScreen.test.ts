@@ -1,5 +1,5 @@
-import { by, device, expect, element } from 'detox';
-import {it, describe, beforeAll, beforeEach} from '@jest/globals';
+import {beforeAll, beforeEach,describe, it} from '@jest/globals';
+import { by, device, element,expect } from 'detox';
 
 describe('Example', () => {
   beforeAll(async () => {
