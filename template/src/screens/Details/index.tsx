@@ -11,7 +11,7 @@ const DetailsScreen = () => {
   return (
     <Container>
       <YStack alignItems='center' justifyContent='center' space={8}>
-        <Card backgroundColor="red" padded>
+        <Card testID='custom-card-id' backgroundColor="red" padded>
           <Text color='black' className="text-2xl dark:text-black">Dependencies</Text>
           <Text color='black' className="text-base dark:text-black">
             This project uses the following dependencies:

@@ -9,7 +9,7 @@ interface ContainerProps {
 const Container: FC<ContainerProps> = ({children}) => {
   return (
     <SafeAreaView className="flex-1 bg-neutral-100 dark:bg-neutral-900">
-      <View 
+      <View
         testID='custom-container-id'
         flex={1}
         space={4}
