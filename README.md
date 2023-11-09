@@ -82,6 +82,7 @@ yarn ios
 - Axios
 - Dayjs
 - FlashList
+- Jotai
 - Nativewind
 - React Hook Form
 - React Native
