@@ -6,15 +6,18 @@
  */
 
 import React from 'react';
+import {AppStateStatus, Platform, useColorScheme} from 'react-native';
+import { RootSiblingParent } from 'react-native-root-siblings';
+import { DrawerContentComponentProps } from '@react-navigation/drawer';
 import {
+  focusManager,
   QueryClient,
   QueryClientProvider,
-  focusManager,
 } from '@tanstack/react-query';
-import {AppStateStatus, Platform} from 'react-native';
-import {useOnlineManager, useStateApp} from 'hooks';
+import { handleDarkModeSelectedAtom } from 'common';
+import {useOnlineManager, useStateApp} from 'common/hooks';
+import { useSetAtom } from 'jotai';
 import {AppNavigation} from 'navigation';
-import { DrawerContentComponentProps } from '@react-navigation/drawer';
 import { TamaguiProvider } from 'tamagui';
 
 import config from './tamagui.config';
@@ -22,16 +25,21 @@ import config from './tamagui.config';
 const client = new QueryClient();
 
 const App = ({ state, navigation, descriptors }: DrawerContentComponentProps) => {
+  const isDarkMode = useColorScheme() === 'dark';
+  const handleDarkModeSelected = useSetAtom(handleDarkModeSelectedAtom);
   const onAppStateChange = (status: AppStateStatus) =>
     Platform.OS !== 'web' && focusManager.setFocused(status === 'active');
 
   useOnlineManager();
   useStateApp(onAppStateChange);
+  handleDarkModeSelected(isDarkMode);
 
   return (
     <QueryClientProvider client={client}>
       <TamaguiProvider config={config}>
-        <AppNavigation state={state} navigation={navigation} descriptors={descriptors}  />
+        <RootSiblingParent>
+          <AppNavigation state={state} navigation={navigation} descriptors={descriptors}  />
+        </RootSiblingParent>
       </TamaguiProvider>
     </QueryClientProvider>
   );

@@ -1,12 +1,13 @@
 import React from 'react';
-import {render} from '@testing-library/react-native';
+import {describe, expect,it} from '@jest/globals';
+import { render } from '@testing-library/react-native';
+
 import Loading from '../index';
 
-import {it, describe, expect} from '@jest/globals';
-
 describe('Loading component', () => {
-  it('should render the loading message', () => {
-    const {getByText} = render(<Loading />);
+  it('should defined', () => {
+    const { getByText } = render(<Loading />);
+    
     const loadingText = getByText('Cargando la información');
 
     expect(loadingText).toBeDefined();

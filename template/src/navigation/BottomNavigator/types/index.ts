@@ -1,6 +1,7 @@
 import {FC, FunctionComponent} from 'react';
-import {BottomTabStackParamList} from '../../types';
+
 import {SvgProps} from '../../../components';
+import {BottomTabStackParamList} from '../../types';
 
 export type TabType = {
   key: number;

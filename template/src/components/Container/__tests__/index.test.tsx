@@ -1,9 +1,9 @@
 import React from 'react';
-import {render} from '@testing-library/react-native';
 import { Text, View } from 'react-native';
+import {describe, expect,it} from '@jest/globals';
+import { render } from '@testing-library/react-native';
+
 import Container from '../index';
-import {it, describe, expect} from '@jest/globals';
-import '@testing-library/jest-native/extend-expect';
 
 describe('Container', () => {
   it('renders children', () => {
@@ -17,7 +17,7 @@ describe('Container', () => {
   });
 
   it('should render without errors when no children are provided', () => {
-    const {queryAllByText} = render(<Container />);
+    const {queryAllByText} = render(<Container children />);
     expect(queryAllByText(/.*/)).toHaveLength(0);
   });
 });

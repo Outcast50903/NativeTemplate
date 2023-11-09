@@ -1,5 +1,8 @@
 import React, {FC} from 'react';
-import {View, Text, TouchableOpacity, useColorScheme} from 'react-native';
+import {Text, TouchableOpacity,View} from 'react-native';
+import { isDarkModeAtom } from 'common';
+import { useAtomValue } from 'jotai';
+
 import {GoBackIcon} from 'components';
 
 interface GoBackArrowProps {
@@ -8,8 +11,7 @@ interface GoBackArrowProps {
 }
 
 const GoBackArrow: FC<GoBackArrowProps> = ({onPress, label}) => {
-  const textColor =
-    useColorScheme() === 'dark' ? 'rgb(245 245 245)' : 'rgb(23 23 23)';
+  const textColor = useAtomValue(isDarkModeAtom) ? 'rgb(245 245 245)' : 'rgb(23 23 23)';
 
   return (
     <View className="flex-1 ml-4 mt-2">

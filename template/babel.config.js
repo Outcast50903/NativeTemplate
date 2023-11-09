@@ -8,14 +8,12 @@ module.exports = {
         root: ['./src'],
         extensions: ['.ts', '.tsx', '.json'],
         alias: {
-          'api': './src/api',
-          'api/*': './src/api/*',
-          'atoms': './src/atoms',
-          'atoms/*': './src/atoms/*',
           'components': './src/components',
           'components/*': './src/components/*',
           'hooks': './src/hooks',
           'hooks/*': './src/hooks/*',
+          'common': './src/common',
+          'common/*': './src/common/*',
           'navigation': './src/navigation',
           'navigation/*': './src/navigation/*',
           'screens': './src/screens',
@@ -38,4 +36,7 @@ module.exports = {
     ],
     'react-native-reanimated/plugin',
   ],
+  ignore: [
+    "**/*.test.js"
+  ]
 };

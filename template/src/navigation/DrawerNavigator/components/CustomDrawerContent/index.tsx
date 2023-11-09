@@ -1,10 +1,11 @@
-import {SafeAreaView, View} from 'react-native';
 import React, {FC} from 'react';
+import {SafeAreaView, View} from 'react-native';
 import {
   DrawerContentComponentProps,
   DrawerContentScrollView,
 } from '@react-navigation/drawer';
-import {DrawerItemsArr} from 'navigation/DrawerNavigator/drawerItems';
+import { DrawerItemsArr } from 'navigation/DrawerNavigator/drawerItems';
+
 import DrawerItem from '../DrawerItem';
 
 const CustomDrawerContent: FC<DrawerContentComponentProps> = ({navigation}) => {

@@ -1,10 +1,9 @@
 import React from 'react';
+import {describe, expect,it} from '@jest/globals';
 import {render} from '@testing-library/react-native';
 
-import {it, describe, expect} from '@jest/globals';
-
-import DetailsScreen from '..';
 import data from '../data';
+import DetailsScreen from '..';
 
 describe('DetailsScreen', () => {
   it('should render Container and Card components', () => {
