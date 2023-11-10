@@ -1,9 +1,9 @@
 import React, {FC, FunctionComponent} from 'react';
 import {Pressable, Text,View} from 'react-native';
+import { SvgProps } from 'assets/Svg';
 import { isDarkModeAtom } from 'common';
 import { useAtomValue } from 'jotai';
 
-import {SvgProps} from 'components';
 
 interface DrawerItemProps {
   label: string;

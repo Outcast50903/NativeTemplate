@@ -1,9 +1,9 @@
 import React, {FC} from 'react';
 import {Text, TouchableOpacity,View} from 'react-native';
+import { GoBackIcon } from 'assets/Svg';
 import { isDarkModeAtom } from 'common';
 import { useAtomValue } from 'jotai';
 
-import {GoBackIcon} from 'components';
 
 interface GoBackArrowProps {
   label: string | undefined;

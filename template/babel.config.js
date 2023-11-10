@@ -8,6 +8,8 @@ module.exports = {
         root: ['./src'],
         extensions: ['.ts', '.tsx', '.json'],
         alias: {
+          'assets': './src/assets',
+          'assets/*': './src/assets/*',
           'components': './src/components',
           'components/*': './src/components/*',
           'hooks': './src/hooks',

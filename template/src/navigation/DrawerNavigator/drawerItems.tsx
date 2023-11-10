@@ -1,4 +1,4 @@
-import {FireIcon, HomeIcon} from 'components';
+import { FireIcon, HomeIcon } from 'assets/Svg';
 
 import {DrawerItemType} from './types';
 

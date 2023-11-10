@@ -2,11 +2,11 @@ import React from 'react';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import {DrawerNavigationOptions, DrawerNavigationProp} from '@react-navigation/drawer';
 import {ParamListBase, RouteProp} from '@react-navigation/native';
+import { DrawerIcon } from 'assets/Svg';
 import { isDarkModeAtom } from 'common';
 import { useAtomValue } from 'jotai';
 import { View } from 'tamagui';
 
-import {DrawerIcon} from 'components';
 
 type Props = {
   route: RouteProp<ParamListBase, string>;
