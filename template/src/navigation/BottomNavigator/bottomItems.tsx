@@ -1,7 +1,6 @@
+import { FireIcon, HomeIcon } from 'assets/Svg';
 import { HomeStack } from 'navigation/stacks';
 import DetailsScreen from 'screens/Details';
-
-import {FireIcon, HomeIcon} from 'components';
 
 import {TabListType} from './types';
 

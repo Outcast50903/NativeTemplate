@@ -1,11 +1,11 @@
 import React, {FC, FunctionComponent} from 'react';
 import { Pressable } from 'react-native';
 import {BottomTabBarButtonProps} from '@react-navigation/bottom-tabs';
+import { SvgProps } from 'assets/Svg';
 import { isDarkModeAtom } from 'common';
 import { useAtomValue } from 'jotai';
 import { Text, View } from 'tamagui';
 
-import {SvgProps} from 'components';
 
 interface DrawerItemProps extends BottomTabBarButtonProps {
   label: string;

@@ -10,6 +10,8 @@
       "hooks/*": ["src/common/hooks/*"],
       "common": ["src/common"],
       "common/*": ["src/common/*"],
+      "assets": ["src/assets"],
+      "assets/*": ["src/assets/*"],
       "navigation": ["./src/navigation"],
       "navigation/*": ["./src/navigation/*"],
       "screens": ["./src/screens"],
