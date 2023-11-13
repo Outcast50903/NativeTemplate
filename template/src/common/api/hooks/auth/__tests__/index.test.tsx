@@ -1,5 +1,5 @@
 import { afterEach,beforeEach, describe, expect, it, jest } from '@jest/globals';
-import { useMutation,useQueryClient } from '@tanstack/react-query';
+import { useMutation } from '@tanstack/react-query';
 import { renderHook } from '@testing-library/react-native';
 import { waitFor } from '@testing-library/react-native';
 
@@ -41,7 +41,6 @@ describe('useMutationLogin', () => {
 
   beforeEach(() => {
     handleFactSelected(auth);
-    (useQueryClient as jest.Mock).mockReturnValue(queryClient);
     (useMutation as jest.Mock).mockReturnValue({ data, isError: false, isLoading: false });
   });
 

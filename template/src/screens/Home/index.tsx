@@ -9,11 +9,11 @@ import { Container } from 'components';
 
 const HomeScreen = () => {
   const navigation = useNavigation<StackNavigationProp<BottomTabStackParamList & HomeStackParamList>>();
-  const { factQuery: { data, isFetching, isLoading } } = useQueryFact();
+  const { factQuery: { data, isFetching, isLoading } } = useQueryFact();  
 
   return (
     <Container>
-      <YStack alignItems='center' justifyContent='center' space={8}>
+      <YStack testID='home-screen' alignItems='center' justifyContent='center' space={8}>
         <H3 color='black' className="dark:text-white">React-Native Template</H3>
         <Card space={8} animation="bouncy" backgroundColor={'red'} padding={16}>
           <Text color='black' className="text-lg dark:text-white">
@@ -24,10 +24,10 @@ const HomeScreen = () => {
             It also includes TanStack Query for handle API calls. See more
             details of the libraries here
           </Text>
-            <View justifyContent='center' alignItems='center'>
+            <View testID='fact-text' justifyContent='center' alignItems='center'>
               {
                 data 
-                  ? (<Text>{data.fact}</Text>) 
+                  ? (<Text >{data.fact}</Text>) 
                   : (isFetching || isLoading) 
                     ? (<Text>Loading...</Text>) 
                     : (<Text>Something went wrong</Text>)
