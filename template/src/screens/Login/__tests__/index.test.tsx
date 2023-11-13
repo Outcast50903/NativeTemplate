@@ -1,7 +1,9 @@
 import React from 'react';
-import {beforeEach,describe, expect, it, jest} from '@jest/globals';
+import { beforeEach,describe, expect, it, jest } from '@jest/globals';
 import { useMutation } from '@tanstack/react-query';
-import { render } from '@testing-library/react-native';
+import { fireEvent, render, renderHook, screen, waitFor } from '@testing-library/react-native';
+
+import '@testing-library/jest-native/extend-expect';
 
 import LoginScreen from '../index';
 
@@ -31,7 +33,7 @@ describe('LoginScreen', () => {
 
   beforeEach(() => {
     mockLoginMutation = jest.fn();
-    (useMutation as jest.Mock).mockReturnValue([mockLoginMutation]);
+    (useMutation as jest.Mock).mockReturnValue({ mutateAsync: mockLoginMutation, isError: false, isLoading: false });
   });
 
   it('should render the email and password inputs', () => {
@@ -44,53 +46,64 @@ describe('LoginScreen', () => {
     expect(passwordInput).toBeDefined();
   });
 
-  // it('should show an error message when email is invalid', async () => {
-  //   const { getByPlaceholderText, getByText } = render(<LoginScreen />);
-  //   const emailInput = getByPlaceholderText('Enter your email');
-  //   const passwordInput = getByPlaceholderText('Enter your password');
-  //   const loginButton = getByText('Login');
+  it('should display error message for short password', async () => {
+    render(<LoginScreen />);
 
-  //   fireEvent.changeText(emailInput, 'invalid-email');
-  //   fireEvent.changeText(passwordInput, 'valid-password');
-  //   fireEvent.press(loginButton);
+    const passwordInput = screen.getByPlaceholderText('Enter your password');
+    fireEvent.changeText(passwordInput, '12345');
+    fireEvent.press(screen.getByTestId('login-button'));
 
-  //   await waitFor(() => {
-  //     const errorMessage = getByText('Invalid email format');
-  //     return expect(errorMessage).toBeDefined();
-  //   });
-  // });
+    const errorMessage = await screen.findByTestId('password-error-message');
 
-  // it('should show an error message when password is too short', async () => {
-  //   const { getByPlaceholderText, getByText } = render(<LoginScreen />);
-  //   const emailInput = getByPlaceholderText('Enter your email');
-  //   const passwordInput = getByPlaceholderText('Enter your password');
-  //   const loginButton = getByText('Login');
+    expect(errorMessage).toHaveTextContent('String must contain at least 6 character(s)');
+  });
 
-  //   fireEvent.changeText(emailInput, 'valid-email@example.com');
-  //   fireEvent.changeText(passwordInput, 'short');
-  //   fireEvent.press(loginButton);
+  it('should display error message for invalid email', async () => {
+    render(<LoginScreen />);
 
-  //   await waitFor(() => {
-  //     const errorMessage = getByText('Password must be at least 6 characters long');
-  //     expect(errorMessage).toBeDefined();
-  //   });
-  // });
+    const emailInput = screen.getByPlaceholderText('Enter your email');
+    fireEvent.changeText(emailInput, 'outcast@');
+    fireEvent.press(screen.getByTestId('login-button'));
 
-  // it('should call the login mutation with the correct arguments', async () => {
-  //   const { getByPlaceholderText, getByText } = render(<LoginScreen />);
-  //   const emailInput = getByPlaceholderText('Enter your email');
-  //   const passwordInput = getByPlaceholderText('Enter your password');
-  //   const loginButton = getByText('Login');
+    const errorMessage = await screen.findByTestId('email-error-message');
 
-  //   fireEvent.changeText(emailInput, 'valid-email@example.com');
-  //   fireEvent.changeText(passwordInput, 'valid-password');
-  //   fireEvent.press(loginButton);
+    expect(errorMessage).toHaveTextContent('Invalid email');
+  });
 
-  //   await waitFor(() => {
-  //     expect(mockLoginMutation).toHaveBeenCalledWith({
-  //       email: 'valid-email@example.com',
-  //       password: 'valid-password',
-  //     });
-  //   });
-  // });
+  it('should display error message for invalid email and password', async () => {
+    render(<LoginScreen />);
+
+    const emailInput = screen.getByPlaceholderText('Enter your email');
+    fireEvent.changeText(emailInput, 'outcast@');
+    const passwordInput = screen.getByPlaceholderText('Enter your password');
+    fireEvent.changeText(passwordInput, '12345');
+
+    fireEvent.press(screen.getByTestId('login-button'));
+
+    const emailErrorMessage = await screen.findByTestId('email-error-message');
+    const passwordErrorMessage = await screen.findByTestId('password-error-message');
+
+    expect(emailErrorMessage).toHaveTextContent('Invalid email');
+    expect(passwordErrorMessage).toHaveTextContent('String must contain at least 6 character(s)');
+  });
+
+  it('should submit valid email and password', async () => {
+    const email = 'test@example.com';
+    const password = 'password123';
+
+    const { getByPlaceholderText, getByTestId } = render(<LoginScreen />);
+    const { result } = renderHook(() => useMutation({ }));
+
+    const emailInput = getByPlaceholderText('Enter your email');
+    const passwordInput = getByPlaceholderText('Enter your password');
+
+    fireEvent.changeText(emailInput, email);
+    fireEvent.changeText(passwordInput, password);
+
+    fireEvent.press(getByTestId('login-button'));
+
+    await waitFor(() => result.current.mutateAsync());
+
+    expect(result.current.mutateAsync).toBeCalled();
+  });
 });

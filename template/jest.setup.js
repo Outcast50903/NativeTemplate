@@ -2,6 +2,9 @@ import {render} from '@testing-library/react-native'
 import { TamaguiProvider } from 'tamagui';
 
 import 'react-native';
+export * from '@testing-library/react-native'
+import '@testing-library/jest-native/extend-expect';
+import 'whatwg-fetch'
 
 import config from './tamagui.config';
 
@@ -15,7 +18,5 @@ const AllTheProviders = ({children}) => {
 
 const customRender = (ui, options) =>
   render(ui, {wrapper: AllTheProviders, ...options})
-
-export * from '@testing-library/react-native'
 
 export {customRender as render}

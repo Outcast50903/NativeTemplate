@@ -50,7 +50,7 @@ const LoginScreen = () => {
         )}
       />
       {formState.errors.email && (
-        <Text color='red'>{formState.errors.email}</Text>
+        <Text testID='email-error-message' color='red'>{formState.errors.email}</Text>
       )}
       <Controller
         control={control}
@@ -69,10 +69,11 @@ const LoginScreen = () => {
         )}
       />
       {formState.errors.password && (
-        <Text color='red'>{formState.errors.password}</Text>
+        <Text testID='password-error-message' color='red'>{formState.errors.password}</Text>
       )}
       <Button 
-        onPress={handleSubmit(onSubmit)} 
+        testID='login-button'
+        onPress={() => handleSubmit(onSubmit)} 
         disabled={!formState.isValid} 
         backgroundColor={ formState.isValid ? 'purple' : 'gray'}>
           Login
