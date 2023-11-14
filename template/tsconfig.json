@@ -4,14 +4,14 @@
     "baseUrl": ".",
     "paths": {
       "*": ["src/*"],
+      "assets": ["src/assets"],
+      "assets/*": ["src/assets/*"],
+      "common": ["src/common"],
+      "common/*": ["src/common/*"],
       "components": ["./src/components"],
       "components/*": ["./src/components/*"],
       "hooks": ["src/common/hooks"],
       "hooks/*": ["src/common/hooks/*"],
-      "common": ["src/common"],
-      "common/*": ["src/common/*"],
-      "assets": ["src/assets"],
-      "assets/*": ["src/assets/*"],
       "navigation": ["./src/navigation"],
       "navigation/*": ["./src/navigation/*"],
       "screens": ["./src/screens"],
@@ -19,7 +19,7 @@
       "utils": ["./src/utils"],
       "utils/*": ["./src/utils/*"],
     },
-    "types": ["jest", "@types/jest"],
+    // "types": ["jest", "@types/jest"],
     "typeRoots": ["./src/types"]
   },
   "exclude": [
