@@ -5,19 +5,19 @@
   "author": "Diego García (Diego Outcast)",
   "private": true,
   "scripts": {
-    "start": "react-native start",
-    "pods": "cd ios && pod install && cd ..",
     "android": "react-native run-android",
+    "build:e2e": "npx detox build --configuration ios.sim.debug",
     "ios": "react-native run-ios",
-    "reset": "find . -type dir -name node_modules -prune -print -exec rm -rf '{}' + && cd ios && rm -rf Pods && cd .",
-    "lint": "eslint .",
     "lint:fix": "yarn lint --fix",
     "lint:tsc": "tsc --noEmit",
-    "test": "jest",
-    "build:e2e": "npx detox build --configuration ios.sim.debug",
-    "test:e2e": "npx detox test --configuration ios.sim.debug",
+    "lint": "eslint .",
+    "pods": "cd ios && pod install && cd ..",
+    "reset": "find . -type dir -name node_modules -prune -print -exec rm -rf '{}' + && cd ios && rm -rf Pods && cd .",
+    "start": "react-native start",
     "test:e2e:watch": "npx detox test --configuration ios.sim.debug --watch",
-    "test:watch": "yarn test --watch"
+    "test:e2e": "npx detox test --configuration ios.sim.debug",
+    "test:watch": "yarn test --watch",
+    "test": "jest"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.3.1",
