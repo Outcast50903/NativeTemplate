@@ -67,3 +67,5 @@ yarn-error.log
 
 .env
 .DS_Store
+
+*/**/__snapshots__/
