@@ -37,11 +37,11 @@ describe('LoginScreen', () => {
   });
 
   it('should render the email and password inputs', () => {
-    const { getByPlaceholderText } = render(<LoginScreen />);
+    render(<LoginScreen />);
     
-    const emailInput = getByPlaceholderText('Enter your email');
-    const passwordInput = getByPlaceholderText('Enter your password');
-    
+    const emailInput = screen.getByPlaceholderText('Enter your email');
+    const passwordInput = screen.getByPlaceholderText('Enter your password');
+
     expect(emailInput).toBeDefined();
     expect(passwordInput).toBeDefined();
   });
