@@ -64,7 +64,6 @@ const LoginScreen = () => {
             onChangeText={onChange}
             value={value}
             secureTextEntry
-            
           />
         )}
       />
