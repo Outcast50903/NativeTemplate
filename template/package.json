@@ -6,6 +6,8 @@
   "private": true,
   "scripts": {
     "android": "react-native run-android",
+    "android:clean": "cd android && ./gradlew clean && cd ..",
+    "android:debug": "cd android && ./gradlew assembleDebug && cd ..",
     "build:e2e": "npx detox build --configuration ios.sim.debug",
     "ios": "react-native run-ios",
     "lint:fix": "yarn lint --fix",
