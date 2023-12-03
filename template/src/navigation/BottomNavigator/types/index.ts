@@ -1,6 +1,6 @@
 import {FC, FunctionComponent} from 'react';
+import { SvgProps } from 'assets/Svg';
 
-import {SvgProps} from '../../../components';
 import {BottomTabStackParamList} from '../../types';
 
 export type TabType = {

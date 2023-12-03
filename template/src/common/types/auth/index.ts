@@ -14,8 +14,6 @@ export interface AuthLoginResponse extends GenericResponse<{ login: LoginRespons
   errors: { message: string }[]
 }
 
-// export type AuthLoginResponse = GenericResponse<{ login: LoginResponse }>
-
 export type AuthDecoded = {
   id:    string;
   roles: string[];

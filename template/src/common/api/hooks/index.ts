@@ -1,2 +1,2 @@
-export { default as Fact } from './Fact';
+export { default as useQueryFact } from './Fact';
 export * from './auth';

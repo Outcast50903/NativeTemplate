@@ -1,9 +1,9 @@
-import React, {FC} from 'react';
+import React, {FC, ReactNode} from 'react';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import { View } from 'tamagui';
 
 interface ContainerProps {
-  children: React.ReactNode;
+  children: ReactNode;
 }
 
 const Container: FC<ContainerProps> = ({children}) => {

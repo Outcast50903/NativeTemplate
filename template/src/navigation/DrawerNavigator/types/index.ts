@@ -1,6 +1,6 @@
 import {FunctionComponent} from 'react';
+import { SvgProps } from 'assets/Svg';
 
-import {SvgProps} from '../../../components';
 import {
   BottomTabStackParamList,
   DrawerStackParamList,
