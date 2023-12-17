@@ -7,7 +7,6 @@
 
 import React from 'react';
 import {AppStateStatus, Platform, useColorScheme} from 'react-native';
-import { RootSiblingParent } from 'react-native-root-siblings';
 import { DrawerContentComponentProps } from '@react-navigation/drawer';
 import {
   focusManager,
@@ -17,8 +16,9 @@ import {
 import { handleDarkModeSelectedAtom } from 'common';
 import {useOnlineManager, useStateApp} from 'common/hooks';
 import { useSetAtom } from 'jotai';
-import {AppNavigation} from 'navigation';
+import { AppNavigation } from 'navigation';
 import { TamaguiProvider } from 'tamagui';
+import { ToastProvider } from 'utils/toast';
 
 import config from './tamagui.config';
 
@@ -37,9 +37,9 @@ const App = ({ state, navigation, descriptors }: DrawerContentComponentProps) =>
   return (
     <QueryClientProvider client={client}>
       <TamaguiProvider config={config}>
-        <RootSiblingParent>
+        <ToastProvider>
           <AppNavigation state={state} navigation={navigation} descriptors={descriptors}  />
-        </RootSiblingParent>
+        </ToastProvider>
       </TamaguiProvider>
     </QueryClientProvider>
   );
