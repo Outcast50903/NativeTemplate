@@ -1,8 +1,9 @@
 import { useQuery } from "@tanstack/react-query";
-import { API, FactResponse } from "common";
+
+import { fetchFact } from "./request";
 
 const useQueryFact = () => {
-  const factQuery = useQuery(['fact'], () => API.get<FactResponse>('fact'), {});
+  const factQuery = useQuery(['fact'], fetchFact);
 
   return {
     factQuery,
