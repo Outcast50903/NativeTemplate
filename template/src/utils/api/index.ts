@@ -27,8 +27,6 @@ export default class AxiosHttpClient extends HttpClient {
     body: UBody,
   ): Promise<TResponse> {
     const {data} = await this.api.post<TResponse>(url, body);
-    console.log('data', data);
-    
     return data;
   }
 
