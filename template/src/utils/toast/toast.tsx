@@ -19,8 +19,8 @@ const Toast: FC<CustomToastProps> = ({
   const isVisible = useAtomValue(isActiveAtom);
   const { width } = useWindowDimensions();
 
-  const fadeAnim = useRef(new Animated.Value(2)).current;
-
+  const fadeAnim = useRef(new Animated.Value(1)).current;
+  
   useEffect(() => {
     Animated.sequence([
       Animated.timing(

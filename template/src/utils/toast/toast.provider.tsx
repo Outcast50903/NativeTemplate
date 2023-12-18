@@ -21,9 +21,10 @@ const ToastProvider: FC<ToastProviderProps> = ({ children }) => {
     default: ['#012A54', '#012A54'],
   }  
 
-  const showToast = ({ message, type }: ToastProps) => {    
+  const showToast = ({ message, type }: ToastProps) => {
     setIsVisible(true)
     setToast({ message, type });
+    setTimeout(() => setIsVisible(false), 3000);
   };  
 
   return (
