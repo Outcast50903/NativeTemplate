@@ -24,7 +24,7 @@ export const validateResponseData = async <ResponseType>({
     }
   } catch (error) {
     console.error(`Error fetching ${String(propertyName)}:`, error);
-    console.log('ERROR RESPONSE: ', (error as unknown as { response: string }).response);
+    console.log('ERROR RESPONSE: ', (error as unknown));
     throw error;
   }
 };
