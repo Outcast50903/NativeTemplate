@@ -8,13 +8,14 @@ module.exports = {
     "jest/globals": true,
   },
   extends: [
+    'plugin:@tanstack/eslint-plugin-query/recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:jest/recommended',
     'eslint:recommended',
     'prettier',
   ],
   parser: '@typescript-eslint/parser',
-  plugins: ['@typescript-eslint', 'react-native', 'simple-import-sort'],
+  plugins: ['@typescript-eslint', 'react-native', 'simple-import-sort', '@tanstack/query'],
   rules: {
     'max-len': [2, { code: 120, ignoreUrls: true }],
     'max-lines': ['warn', { max: 350, skipBlankLines: true, skipComments: true }],
@@ -22,16 +23,19 @@ module.exports = {
     'max-lines-per-function': 'off',
     '@typescript-eslint/no-use-before-define': ['warn'],
     '@typescript-eslint/explicit-module-boundary-types': 'off',
-    "simple-import-sort/imports": [
-      "error",
+    '@tanstack/query/exhaustive-deps': 'error',
+    '@tanstack/query/no-rest-destructuring': 'warn',
+    '@tanstack/query/stable-query-client': 'error',
+    'simple-import-sort/imports': [
+      'error',
       {
-        "groups": [
-          ["^react", "^@?\\w"],
-          ["^(@|components)(/.*|$)"],
-          ["^\\u0000"],
-          ["^\\.\\.(?!/?$)", "^\\.\\./?$"],
-          ["^\\./(?=.*/)(?!/?$)", "^\\.(?!/?$)", "^\\./?$"],
-          ["^.+\\.?(css)$"]
+        'groups': [
+          ['^react', '^@?\\w'],
+          ['^(@|components)(/.*|$)'],
+          ['^\\u0000'],
+          ['^\\.\\.(?!/?$)', '^\\.\\./?$'],
+          ['^\\./(?=.*/)(?!/?$)', '^\\.(?!/?$)', '^\\./?$'],
+          ['^.+\\.?(css)$']
         ]
       }
     ]
