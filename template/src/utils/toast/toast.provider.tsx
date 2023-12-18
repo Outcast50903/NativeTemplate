@@ -12,7 +12,7 @@ const ToastProvider: FC<ToastProviderProps> = ({ children }) => {
   const [toast, setToast] = useState<ToastProps>({ message: '', type: 'default' });
   const setIsVisible = useSetAtom(isActiveAtom);
   const isDarkMode = useAtomValue(isDarkModeAtom);
-
+  
   const colors = {
     info: ['#0D73DA', '#012A54'],
     success: ['#00B26A', '#033D26'],
@@ -21,18 +21,16 @@ const ToastProvider: FC<ToastProviderProps> = ({ children }) => {
     default: ['#012A54', '#012A54'],
   }  
 
-  const showToast = ({ message, type }: ToastProps) => {
-    console.log(message, type);
-    
+  const showToast = ({ message, type }: ToastProps) => {    
     setIsVisible(true)
     setToast({ message, type });
-    setTimeout(() => setIsVisible(false), 3000);
   };  
 
   return (
     <ToastContext.Provider value={{ showToast }}>
       <Toast 
         {...toast}
+        autoHideMs={1000}
         containerStyle={{
           backgroundColor: isDarkMode ? 'black' : 'white',
           borderLeftWidth: 12,
