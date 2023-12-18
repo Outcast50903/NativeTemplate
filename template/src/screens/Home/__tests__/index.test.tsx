@@ -1,23 +1,9 @@
-import React from 'react';
 import { beforeEach,describe, expect, it, jest } from '@jest/globals';
 import { useNavigation } from '@react-navigation/native';
 import { QueryClient,QueryClientProvider, useQuery } from '@tanstack/react-query';
 import { render, renderHook, screen, waitFor } from '@testing-library/react-native';
 
 import HomeScreen from '../index';
-
-jest.mock('react-native-root-toast', () => ({
-  show: jest.fn(),
-  durations: {
-    LONG: 3500,
-    SHORT: 2000,
-  },
-  positions: {
-    BOTTOM: 0,
-    CENTER: 1,
-    TOP: 2,
-  },
-}));
 
 jest.mock('@react-native-async-storage/async-storage', () => ({
   getItem: jest.fn(),

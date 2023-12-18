@@ -9,19 +9,6 @@ import LoginScreen from '../index';
 
 jest.mock('@tanstack/react-query');
 
-jest.mock('react-native-root-toast', () => ({
-  show: jest.fn(),
-  durations: {
-    LONG: 3500,
-    SHORT: 2000,
-  },
-  positions: {
-    BOTTOM: 0,
-    CENTER: 1,
-    TOP: 2,
-  },
-}));
-
 jest.mock('@react-native-async-storage/async-storage', () => ({
   getItem: jest.fn(),
   setItem: jest.fn(),
