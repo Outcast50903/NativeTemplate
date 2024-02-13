@@ -1,4 +1,3 @@
-import React from 'react';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import {DrawerNavigationOptions, DrawerNavigationProp} from '@react-navigation/drawer';
 import {ParamListBase, RouteProp} from '@react-navigation/native';
@@ -30,7 +29,7 @@ const DrawerConfig = ({navigation}: Props): DrawerNavigationOptions => {
     drawerInactiveTintColor: textColor,
     headerTitle: () => null,
     headerLeft: () => (
-      <View className="flex-1 ml-4 items-center justify-center">
+      <View className="flex-1 ml-4 items-center justify-center" backgroundColor='blue' padding={10}>
         <TouchableOpacity onPress={() => navigation.toggleDrawer()}>
           <DrawerIcon width={30} height={30} color={textColor} />
         </TouchableOpacity>

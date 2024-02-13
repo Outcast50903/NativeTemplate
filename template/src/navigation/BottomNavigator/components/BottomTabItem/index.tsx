@@ -4,7 +4,7 @@ import {BottomTabBarButtonProps} from '@react-navigation/bottom-tabs';
 import { SvgProps } from 'assets/Svg';
 import { isDarkModeAtom } from 'common';
 import { useAtomValue } from 'jotai';
-import { Text, View } from 'tamagui';
+import { View } from 'tamagui';
 
 
 interface DrawerItemProps extends BottomTabBarButtonProps {
@@ -36,9 +36,6 @@ const BottomTabItem: FC<DrawerItemProps> = ({
           <View>
             <CurrentIcon />
           </View>
-          <Text allowFontScaling={false} color={focused ? 'red' : isDarkMode ? 'white' : 'black'}>
-            {label}
-          </Text>
         </View>
       </View>
     </Pressable>
