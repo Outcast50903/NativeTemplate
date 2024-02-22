@@ -1,0 +1,24 @@
+{
+  "folders": [
+    {
+      "name": "android",
+      "path": "./template/android"
+    },
+    {
+      "name": "ios",
+      "path": "./template/ios"
+    },
+    {
+      "name": "Template",
+      "path": "./template"
+    },
+    {
+      "name": "main",
+      "path": "."
+    },
+  ],
+  "settings": {
+    "eslint.format.enable": true,
+    "terminal.integrated.cwd": "${workspaceFolder:Monorepo}"
+  }
+}

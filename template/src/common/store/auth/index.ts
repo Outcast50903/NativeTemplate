@@ -1,6 +1,6 @@
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import { AuthDecoded, AuthStoreState } from 'common/types'
-import jwt_decode from 'jwt-decode'
+import { jwtDecode } from 'jwt-decode'
 import { create } from 'zustand'
 import { createJSONStorage, persist } from 'zustand/middleware'
 
@@ -22,7 +22,7 @@ export const useAuthStore = create(
           }))
         },
         dispatchLogin: (accessToken: string, refreshToken: string) => {
-          const token: AuthDecoded = jwt_decode(accessToken)
+          const token: AuthDecoded = jwtDecode(accessToken)
           set({
             accessToken,
             refreshToken,
